@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUDANÇA TOTAL 2.0 - Renascendo das Cinzas</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    /* FENIX GIGANTE BRILHANDO E PISCANDO */
-    @keyframes brilho-fenix {
-      0% { filter: brightness(1) drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange); transform: scale(1); }
-      50% { filter: brightness(1.5) drop-shadow(0 0 40px gold) drop-shadow(0 0 80px orange) drop-shadow(0 0 100px red); transform: scale(1.03); }
-      100% { filter: brightness(1) drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange); transform: scale(1); }
-    }
-   .fenix-brilho { animation: brilho-fenix 2.5s infinite ease-in-out; will-change: filter, transform; }
-    /* BOTÃO PULSANDO */
-    @keyframes pulse-gold {
-      0% { box-shadow: 0 0 0 0 rgba(201, 168, 106, 0.8); transform: scale(1); }
-      70% { box-shadow: 0 0 0 25px rgba(201, 168, 106, 0); transform: scale(1.05); }
-      100% { box-shadow: 0 0 0 0 rgba(201, 168, 106, 0); transform: scale(1); }
-    }
-   .pulse { animation: pulse-gold 2s infinite; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUDANÇA TOTAL 2.0 - Renascendo das Cinzas</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+body{font-family:'Inter',sans-serif}
+@keyframes brilho-pisca{
+0%{opacity:1;filter:brightness(1) drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange);transform:scale(1)}
+25%{opacity:0.7;filter:brightness(1.8) drop-shadow(0 0 40px gold) drop-shadow(0 0 80px orange) drop-shadow(0 0 120px red);transform:scale(1.02)}
+50%{opacity:1;filter:brightness(1.1) drop-shadow(0 0 20px gold);transform:scale(1)}
+75%{opacity:0.6;filter:brightness(2.1) drop-shadow(0 0 50px gold) drop-shadow(0 0 90px orange);transform:scale(1.04)}
+100%{opacity:1;filter:brightness(1) drop-shadow(0 0 15px gold);transform:scale(1)}
+}
+.fenix{animation:brilho-pisca 2s infinite ease-in-out;will-change:filter,transform}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,168,106,.8)}70%{box-shadow:0 0 0 25px rgba(201,168,106,0)}100%{box-shadow:0 0 0 0 rgba(201,168,106,0)}}
+.pulse{animation:pulse 2s infinite}
+</style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
 
-  <!-- CAPA FULL PAGE 100% - FENIX BRILHANDO -->
-  <div class="w-full h-[100vh] h-[100svh] relative bg-black overflow-hidden">
-    <!-- USA A MESMA IMAGEM QUE JÁ ESTÁ NO SEU GITHUB -->
-    <img src="https://raw.githubusercontent.com/jonathananselmo1234-creator/Legado-j-md/main/IMG-20261012-WA9953.jpg"
-         onerror="this.src='./IMG-20261012-WA9953.jpg'"
-         class="fenix-brilho w-full h-full object-cover object-center block"
-         alt="Mudança Total 2.0 - Renascedo das Cinzas" />
-    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20 pointer-events-none"></div>
-    <div class="absolute top-0 left-0 right-0 pt-8 text-center pointer-events-none">
-      <h1 class="text-[10vw] md:text-7xl font-black leading-none tracking-tighter drop-shadow-[0_5px_25px_rgba(0,0,0,1)]">MUDANÇA TOTAL 2.0</h1>
-      <p class="text-[#C9A86A] text-lg md:text-xl font-black tracking-[0.2em] mt-2 drop-shadow-[0_2px_15px_rgba(0,0,0,1)]">A VIRADA DE CHAVE</p>
-    </div>
-    <div class="absolute bottom-
+<!-- CAPA FENIX GIGANTE DOMINANDO -->
+<div class="w-full h-[100vh] h-[100svh] relative bg-black overflow-hidden">
+<img src="https://raw.githubusercontent.com/jonathananselmo1234-creator/Legado-j-md/main/IMG-20261012-WA6332.jpg"
+onerror="this.src='./IMG-20261012-WA6332.jpg'"
+class="fenix w-full h-full object-cover object-center absolute inset-0"
+alt="Fenix Mudança Total 2.0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20 pointer-events-none"></div>
+<div class="absolute top-0 left-0 right-0 pt-8 text-center pointer-events-none">
+<h1 class="text-[11vw] md:text-7xl font-black leading-none drop-shadow-[0_5px_25px_black]">MUDANÇA TOTAL 2.0</h1>
+<p class="text-[#C9A86A] font-black tracking-[0.25em] text-sm md:text-xl mt-2 drop-shadow-
