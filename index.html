@@ -3,46 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LEGADO J</title>
+<title>LEGADO J - MUDANÇA TOTAL 2.0</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Cinzel:wght@900&family=Inter:wght@900&display=swap');
-.gold {
-  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Inter:wght@400;700;900&display=swap');
+body{font-family:'Inter',sans-serif; background:#000}
+.gold{
+  font-family:'Cinzel Decorative', serif;
   background: linear-gradient(180deg, #FFF4B5 0%, #FFD700 25%, #C9A86A 50%, #8C6B3A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 20px rgba(255,215,0,0.6)) drop-shadow(0 0 50px rgba(201,168,106,0.8)) drop-shadow(0 4px 0 #000);
-  letter-spacing: 0.05em;
+  filter: drop-shadow(0 0 15px rgba(255,215,0,0.6)) drop-shadow(0 3px 0 #000);
 }
-.frase-preta{
-  font-family: 'Inter', sans-serif;
-  background: rgba(255,255,255,0.92);
-  color: #000;
-  box-shadow: 0 0 20px rgba(0,0,0,0.8);
-}
-@keyframes pisca{0%,100%{filter:brightness(1) drop-shadow(0 0 15px gold)}50%{filter:brightness(1.7) drop-shadow(0 0 45px gold)}}
-.fenix{animation:pisca 2.5s infinite}
+@keyframes pulseBtn{0%{box-shadow:0 0 0 0 rgba(201,168,106,.9);transform:scale(1)}70%{box-shadow:0 0 0 20px rgba(201,168,106,0)}100%{box-shadow:0 0 0 0 rgba(201,168,106,0)}}
+.pulse{animation:pulseBtn 1.8s infinite}
+@keyframes piscaFenix{0%,100%{filter:brightness(1)}50%{filter:brightness(1.25)}}
+.fenix{animation:piscaFenix 3s infinite}
 </style>
 </head>
-<body class="bg-black">
-<div class="w-full h-[100svh] relative bg-black flex items-center justify-center overflow-hidden">
-<img src="./IMG-20261012-WA6332.jpg" class="fenix w-full h-full object-cover absolute inset-0 scale-[1.5] object-[center_40%]">
+<body class="bg-black text-white">
 
-<!-- TAMPA TUDO QUE VEM ESCRITO DENTRO DA FOTO -->
-<div class="absolute top-0 left-0 right-0 h-[28%] bg-black z-10"></div>
-<div class="absolute bottom-0 left-0 right-0 h-[35%] bg-black z-10"></div>
-<div class="absolute inset-0 bg-black/10 z-[5]"></div>
+<!-- CAPA - FENIX ORIGINAL SEM CORTAR -->
+<div class="w-full h-[88svh] relative bg-black flex items-center justify-center overflow-hidden">
+<img src="./IMG-20261012-WA6332.jpg" class="fenix absolute inset-0 w-full h-full object-cover object-[center_48%]" alt="Fenix Legado J">
 
-<div class="relative z-20 text-center px-4">
-<h1 class="gold font-black leading-[0.85] text-[22vw] md:text-[130px]">LEGADO<br>J</h1>
+<!-- ESCONDE OS TEXTOS QUE JÁ VEM DENTRO DA FOTO -->
+<div class="absolute top-0 left-0 right-0 h-[20%] bg-black z-10"></div>
+<div class="absolute bottom-0 left-0 right-0 h-[20%] bg-black z-10"></div>
+<div class="absolute inset-0 bg-black/20 z-[5]"></div>
 
-<!-- FRASE NOVA ABAIXO DO LEGADO J -->
-<p class="frase-preta mt-6 inline-block px-5 py-2 rounded-full font-black tracking-wide text-[11px] md:text-[14px] uppercase">
-Se você for capaz de vencer você mesmo, você vence qualquer coisa.
+<div class="relative z-20 flex flex-col items-center text-center px-3 w-full">
+<h1 class="gold font-black leading-[0.85] text-[19vw] md:text-[110px]">LEGADO<br>J</h1>
+
+<p class="mt-5 bg-white text-black font-black text-[10px] md:text-[13px] uppercase tracking-wide px-5 py-3 rounded-full max-w-[92vw] leading-tight shadow-[0_0_30px_rgba(0,0,0,0.9)]">
+SE VOCÊ FOR CAPAZ DE VENCER VOCÊ MESMO, VOCÊ VENCE QUALQUER COISA.
 </p>
 </div>
 </div>
+
+<!-- CONTEÚDO -->
+<div class="max-w-3xl mx-auto px-6 py-14 text-center">
+<div class="space-y-6 text-gray-200 text-[17px] leading-relaxed">
+<p>Aqui você irá encontrar relatos de pessoas que venceram a pornografia, o cigarro, o crack e as apostas.</p>
+<p class="text-white font-bold text-[19px]">Método Mudança Total 2.0, focado em criar estruturas mentais e força mental, psicológica e espiritual.</p>
+<p class="text-[#C9A86A] font-black text-[20px] pt-6 border-t border-white/10">Se você superar a si mesmo, supera qualquer obstáculo.</p>
+</div>
+
+<!-- BOTÃO PISCANDO -->
+<div class="mt-12 max-w-md mx-auto">
+<a href="https://pay.kiwify.com.br/J3jeYCv" target="_blank" class="pulse block w-full bg-[#C9A86A] hover:bg-[#b8955a] text-black font-black py-5 rounded-2xl text-lg tracking-wide text-center">
+QUERO COMEÇAR MINHA MUDANÇA AGORA
+</a>
+
+<!-- GARANTIA 7 DIAS -->
+<div class="mt-8 border-2 border-[#C9A86A] rounded-2xl p-6 bg-[#0f0f0f]">
+<p class="text-[#C9A86A] font-black text-xl">🛡️ GARANTIA DE 7 DIAS</p>
+<p class="text-white text-sm mt-3 leading-relaxed">Risco ZERO. Se em 7 dias você achar que não é pra você, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.</p>
+</div>
+
+<p class="mt-6 text-white/40 text-[11px]">Pagamento 100% seguro pela Kiwify • Acesso imediato após a compra</p>
+</div>
+</div>
+
+<footer class="py-10 text-center text-white/20 text-xs tracking-[0.3em] border-t border-white/5">LEGADO J © 2026 - MUDANÇA TOTAL 2.0</footer>
+
 </body>
 </html>
