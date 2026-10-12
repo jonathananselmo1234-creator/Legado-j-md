@@ -11,47 +11,42 @@
       70% { box-shadow: 0 0 0 20px rgba(201, 168, 106, 0); transform: scale(1.05); }
       100% { box-shadow: 0 0 0 0 rgba(201, 168, 106, 0); transform: scale(1); }
     }
- .pulse { animation: pulse-gold 2s infinite; }
+   .pulse { animation: pulse-gold 2s infinite; }
+    @keyframes phoenix-glow {
+      0% { filter: brightness(1) drop-shadow(0 0 10px rgba(255,215,0,0.5)); }
+      50% { filter: brightness(1.25) drop-shadow(0 0 35px rgba(255,180,0,0.9)); }
+      100% { filter: brightness(1) drop-shadow(0 0 10px rgba(255,215,0,0.5)); }
+    }
+   .phoenix { animation: phoenix-glow 3s ease-in-out infinite; }
   </style>
 </head>
 <body class="bg-black text-white">
-
-  <!-- CAPA COM SUA FOTO + ESCURECIDA -->
-  <div class="w-full h-[85vh] relative overflow-hidden">
-    <img src="https://raw.githubusercontent.com/jonathananselmo1234-creator/Legado-j-md/main/IMG-20261012-WA9953.jpg"
-         class="w-full h-full object-cover object-top"
-         alt="Mudança Total 2.0" />
-    <!-- escurece 60% pra destacar o texto -->
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30"></div>
-
-    <div class="absolute bottom-0 left-0 right-0 p-6 text-center">
-      <h1 class="text-5xl md:text-7xl font-black tracking-tighter drop-shadow-[0_4px_30px_rgba(0,0,0,1)]">MUDANÇA TOTAL 2.0</h1>
-      <p class="text-[#C9A86A] text-xl md:text-2xl font-black tracking-[0.2em] mt-3 drop-shadow-[0_2px_15px_rgba(0,0,0,1)]">A VIRADA DE CHAVE</p>
-      <p class="text-white/80 text-sm mt-2 tracking-widest">RENASCENDO DAS CINZAS</p>
+  <div class="w-full h-[95vh] relative overflow-hidden bg-black">
+    <img src="./capa.png" class="phoenix w-full h-full object-cover object-center" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+    <div class="absolute top-8 left-0 right-0 text-center">
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter drop-shadow-[0_4px_20px_rgba(0,0,0,1)]">MUDANÇA TOTAL 2.0</h1>
+    </div>
+    <div class="absolute bottom-6 left-0 right-0 text-center">
+      <p class="text-[#FFD700] text-xl font-black tracking-[0.3em] drop-shadow-[0_2px_20px_rgba(0,0,0,1)]">RENASCENDO DAS CINZAS</p>
     </div>
   </div>
-
-  <!-- CONTEUDO -->
   <div class="max-w-3xl mx-auto px-6 py-12 text-center">
       <div class="text-gray-300 text-lg leading-relaxed space-y-6 text-left md:text-center">
         <p>Aqui você irá encontrar relatos de pessoas que venceram a pornografia, o cigarro, o crack e as apostas.</p>
         <p class="text-white font-semibold">Esse é o método Mudança Total 2.0, focado em criar estruturas mentais e força mental, psicológica e espiritual.</p>
         <p>Nós, do Legado J, acreditamos que pra usar o 100% do potencial é necessário estar em harmonia com mente, espírito e emocional.</p>
         <p class="text-white font-bold text-xl">Se você conseguir superar a si mesmo, você consegue superar qualquer obstáculo.</p>
-        <p class="pt-6 border-t border-white/10">Não é um método milagroso. O resultado vai depender do seu esforço, do quanto você quer mudar. Se levar isso 100% a sério, as mudanças vão ser reais. Só depende de você.</p>
-        <p class="text-[#C9A86A] font-black text-xl">Não deixa pra amanhã, nem depois de amanhã. Começa hoje. Quanto mais rápido você começar, mais você vai ver as mudanças acontecer. Está na hora de você parar de desperdiçar o seu potencial e começar a usar ele de verdade.</p>
+        <p class="pt-6 border-t border-white/10">Não é um método milagroso. O resultado vai depender do seu esforço. Se levar 100% a sério, as mudanças vão ser reais.</p>
+        <p class="text-[#C9A86A] font-black text-xl">Não deixa pra amanhã. Começa hoje. Tá na hora de parar de desperdiçar seu potencial.</p>
       </div>
-
       <div class="mt-12 max-w-md mx-auto">
         <a href="https://pay.kiwify.com.br/J3jeYCv" target="_blank" class="pulse block w-full bg-[#C9A86A] hover:bg-[#b8965a] text-black font-black px-12 py-6 rounded-xl text-xl text-center transition">DAR O PRIMEIRO PASSO AGORA</a>
-
         <div class="mt-10 border-2 border-[#C9A86A] rounded-2xl p-6 text-center bg-[#111]">
           <p class="text-[22px] text-[#C9A86A] font-black mb-2">🛡️ GARANTIA DE 7 DIAS</p>
-          <p class="text-white text-[15px] leading-snug">Se você não gostar do Legado J 2.0 por QUALQUER motivo, eu devolvo 100% do seu dinheiro em até 7 dias. Sem perguntas. Sem burocracia. Risco ZERO pra você.</p>
+          <p class="text-white text-[15px] leading-snug">Se não gostar por QUALQUER motivo, devolvo 100% em até 7 dias. Risco ZERO.</p>
         </div>
       </div>
   </div>
-
 </body>
 </html>
