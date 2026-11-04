@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat - Irmãos de 1000 Batalhas</title>
+<style>
+body{margin:0;font-family:Arial;background:#0f0f0f;color:white}
+header{background:#111;padding:15px;text-align:center;border-bottom:2px solid #ffcc00}
+header h1{margin:0;color:#ffcc00;font-size:22px}
+header p{margin:5px 0 0;color:#ccc;font-size:13px}
+header a{color:#ffcc00;text-decoration:none;font-size:13px}
+#login{padding:20px;text-align:center}
+#login input{padding:12px;width:80%;max-width:320px;border-radius:20px;border:none;outline:none;margin-top:10px}
+#login button{padding:12px 20px;border:none;border-radius:20px;background:#ffcc00;font-weight:bold;margin-top:12px}
+#chat{display:none;flex-direction:column;height:calc(100vh - 80px)}
+#msgs{flex:1;overflow-y:auto;padding:15px;display:flex;flex-direction:column;gap:10px}
+.msg{background:#222;padding:10px 14px;border-radius:15px;max-width:85%;word-break:break-word}
+.msg b{color:#ffcc00;font-size:13px}
+.msg span{font-size:11px;color:#888;display:block;margin-top:4px}
+.me{background:#3a2d00;align-self:flex-end}
+#form{display:flex;padding:10px;gap:8px;background:#111}
+#form input{flex:1;padding:12px;border-radius:20px;border:none;outline:none}
+#form button{padding:12px 18px;border:none;border-radius:20px;background:#ffcc00;font-weight:bold}
+#dias{padding:8px 15px;background:#1a1a1a;font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+<h1>⚔️ IRMÃOS DE 1000 BATALHAS</h1>
+<p>Ninguém luta sozinho | Chat anônimo ao vivo</p>
+<a href="index.html">← Voltar para o início</a>
+</header>
+
+<div id="login">
+<h2>Entre como Guerreiro</h2>
+<p>Escolha seu apelido, sem e-mail, sem número.</p>
+<input id="apelido" placeholder="Ex: Guerreiro_23">
+<br>
+<input id="diasInput" type="number" placeholder="Quantos dias limpo? Ex: 5">
+<br>
+<button onclick="entrar()">ENTRAR NO CHAT 🔥</button>
+</div>
+
+<div id="chat">
+<div id="dias"></div>
+<div id="msgs"></div>
+<form id="form" onsubmit="enviar(event)">
+<input id="texto" placeholder="Fala, irmão... desabafa, pede ajuda, celebra vitória" autocomplete="off">
+<button>ENVIAR</button>
+</form>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAlKHOrABxCi_JukQhitqPty32_-BlckV4",
+  authDomain: "irmaos-de-1000-batalhas.firebaseapp.com",
+  projectId: "irmaos-de-1000-batalhas",
+  storageBucket: "irmaos-de-1000-batalhas.firebasestorage.app",
+  messagingSenderId: "703728096462",
+  appId: "1:703728096462:web:5069fb510a4ab9873f6c9f",
+  measurementId: "G-KZTN9LBHLT"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+signInAnonymously(auth).catch(e=>console.log(e));
+
+let meuApelido = "";
+let meusDias = "";
+
+window.entrar = () => {
+  meuApelido = document.getElementById("apelido").value.trim() || "Guerreiro_Anonimo";
+  meusDias = document.getElementById("diasInput").value || "0";
+  document.getElementById("login").style.display = "none";
+  document.getElementById("chat").style.display = "flex";
+  document.getElementById("dias").innerHTML = `Você está firme há <b style="color:#ffcc00">${meusDias} dias</b> 🔥 | Continue, irmão!`;
+  carregar();
+}
+
+function carregar(){
+  const q = query(collection(db, "mensagens"), orderBy("criadoEm", "asc"));
+  onSnapshot(q, (snap)=>{
+    const div = document.getElementById("msgs");
+    div.innerHTML = "";
+    snap.forEach(d=>{
+      const m = d.data();
+      const el = document.createElement("div");
+      el.className = "msg" + (m.apelido === meuApelido ? " me" : "");
+      el.innerHTML = `<b>${m.apelido} • ${m.dias} dias limpo</b>${m.texto}<span>${m.criadoEm?.toDate().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}) || ''}</span>`;
+      div.appendChild(el);
+    });
+    div.scrollTop = div.scrollHeight;
+  });
+}
+
+window.enviar = async (e) => {
+  e.preventDefault();
+  const input = document.getElementById("texto");
+  if(!input.value.trim()) return;
+  await addDoc(collection(db, "mensagens"), {
+    apelido: meuApelido,
+    dias: meusDias,
+    texto: input.value,
+    criadoEm: serverTimestamp()
+  });
+  input.value = "";
+}
+</script>
+</body>
+</html>
