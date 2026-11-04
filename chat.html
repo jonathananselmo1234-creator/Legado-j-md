@@ -31,7 +31,6 @@ header a{color:#ffcc00;text-decoration:none;font-size:13px}
 <p>Ninguém luta sozinho | Chat anônimo ao vivo</p>
 <a href="index.html">← Voltar para o início</a>
 </header>
-
 <div id="login">
 <h2>Entre como Guerreiro</h2>
 <p>Escolha seu apelido, sem e-mail, sem número.</p>
@@ -41,7 +40,6 @@ header a{color:#ffcc00;text-decoration:none;font-size:13px}
 <br>
 <button onclick="entrar()">ENTRAR NO CHAT 🔥</button>
 </div>
-
 <div id="chat">
 <div id="dias"></div>
 <div id="msgs"></div>
@@ -50,12 +48,10 @@ header a{color:#ffcc00;text-decoration:none;font-size:13px}
 <button>ENVIAR</button>
 </form>
 </div>
-
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyAlKHOrABxCi_JukQhitqPty32_-BlckV4",
   authDomain: "irmaos-de-1000-batalhas.firebaseapp.com",
@@ -65,15 +61,12 @@ const firebaseConfig = {
   appId: "1:703728096462:web:5069fb510a4ab9873f6c9f",
   measurementId: "G-KZTN9LBHLT"
 };
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 signInAnonymously(auth).catch(e=>console.log(e));
-
 let meuApelido = "";
 let meusDias = "";
-
 window.entrar = () => {
   meuApelido = document.getElementById("apelido").value.trim() || "Guerreiro_Anonimo";
   meusDias = document.getElementById("diasInput").value || "0";
@@ -82,7 +75,6 @@ window.entrar = () => {
   document.getElementById("dias").innerHTML = `Você está firme há <b style="color:#ffcc00">${meusDias} dias</b> 🔥 | Continue, irmão!`;
   carregar();
 }
-
 function carregar(){
   const q = query(collection(db, "mensagens"), orderBy("criadoEm", "asc"));
   onSnapshot(q, (snap)=>{
@@ -98,7 +90,6 @@ function carregar(){
     div.scrollTop = div.scrollHeight;
   });
 }
-
 window.enviar = async (e) => {
   e.preventDefault();
   const input = document.getElementById("texto");
